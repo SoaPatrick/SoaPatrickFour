@@ -42,7 +42,6 @@
 				wp_nav_menu( array(
 					'menu_id'		 => '',
 					'menu_class'     => '',
-					'theme_location' => 'primary',
 					'container'		 => '',
 					'depth'			 => 1,
 				) );
@@ -57,7 +56,6 @@
 					wp_nav_menu( array(
 						'menu_id'		 => '',
 						'menu_class'     => 'horizontal-nav',
-						'theme_location' => 'primary',
 						'container'		 => '',
 						'depth'			 => 1,
 					) );
