@@ -1,0 +1,85 @@
+/*----------------------------------------------
+	Scaffolding
+----------------------------------------------*/
+
+html,
+body {
+	height: 100%;   	
+	margin: 0;
+	padding: 0;	
+}
+
+body {
+	color: $text-color;
+	font-size: calc(18px + .25vw);
+	font-family: 'Lora', serif;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -.25px; 
+	overflow-x: hidden;       	
+    
+    p {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		line-height: calc(1.5em + .2vw);			
+	}
+	
+	a {
+	    text-decoration: none;
+	    color: $text-color;
+	    border-bottom: 1px solid $text-color;
+	    
+	    &:hover,
+	    &:focus {
+		    text-decoration: none;
+		    border-bottom: none;
+	    }
+	}
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;	
+	height: 100%;
+	
+	.site-footer, 
+	.site-header,
+	.site-navigation {
+		flex: none;
+	}
+	
+	.site-content {
+		flex: 1 0 auto;	
+	}
+}
+
+.container {
+    width: 92vw;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.container-fluid {
+    width: 100%;  
+    margin: 0 auto;
+}
+
+@media (min-width: 1500px) {
+	.container {
+	    max-width: calc(1500px + 20vw);
+	}
+}
+
+@media (max-width: 767px) {
+	.container {
+		padding: 0 30px;
+		width: auto;
+	}	
+}
+
+/*----------------------------------------------
+	Site Content
+----------------------------------------------*/
+
+.site-content {
+	padding: 0 0 3em;
+}

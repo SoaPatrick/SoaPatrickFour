@@ -1,0 +1,56 @@
+/*----------------------------------------------
+	Pagination
+----------------------------------------------*/
+
+.pagination {
+	margin-top: 5em;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	list-style: none;
+	padding-left: 0;
+	
+	li {
+		&.active span {
+			background: $soap-color;
+			color: #fff;
+		}
+		
+		span,
+		a {
+			border: 0;
+			background: #eee;	
+			margin: .5em .2em;
+			width: $round-button-size;
+			height: $round-button-size;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;	
+//			font-size: calc(18px + 1vw);
+			
+			svg {
+				fill: $text-color;
+				width: 70% !important;
+				height: 70%;
+			}
+			
+			&:hover,
+			&:focus {
+				svg {
+					fill: #fff;
+				}
+			}											
+		}
+		
+		.extend {
+			background: transparent;
+		}
+		
+		a:hover,
+		a:focus {
+			background: $soap-color;
+			color: #fff;
+		}
+	}
+}

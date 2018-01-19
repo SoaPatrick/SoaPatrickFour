@@ -1,0 +1,61 @@
+/*----------------------------------------------
+	Site Header
+----------------------------------------------*/
+
+.site-header {
+	background: url(img/header-bg.jpg) no-repeat center bottom;
+	background-size: cover;
+	height: 33vw;
+	min-height: 500px;
+	
+	a {
+		color: #fff;
+		font-weight: bold;
+		border: 0;		
+	}
+	
+	.container-nav,
+	.container-logo {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+	}
+	
+	.container-nav {
+		justify-content: flex-end;		
+	}
+	
+	.container-logo {
+		justify-content: flex-start;
+	}	
+	
+	.logo {
+		margin: 1em;
+		width: 20vw;
+		max-width: 10em;
+		min-width: 8em;
+		height: auto;
+
+	  
+		.sp-logo {
+		  width: 100%;
+		  height: auto;
+		  -webkit-filter: drop-shadow( 5px 5px 5px rgba(0,0,0,.2) );
+		  filter: drop-shadow( 5px 5px 5px rgba(0,0,0,.2) );
+		  	  
+			.letter-s,
+			.letter-p {
+				fill: #fff;							
+			}	
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.site-header {	
+		.logo {
+			width: 130px;			
+			margin: 2em auto 0 auto;
+		}
+	}	
+}

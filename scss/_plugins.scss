@@ -1,0 +1,27 @@
+/*----------------------------------------------
+	Sharify Plugin
+----------------------------------------------*/
+
+.sharify-container {
+	li  {
+		min-width: auto !important;
+		height: auto;
+		padding: 0 0.5em 0 0;
+		
+		a {
+			width: 2.5em !important;
+			height: 2.5em;
+			border-radius: $border-radius-base;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 1em;
+			line-height: 1;
+			
+			.sharify-icon {
+				font-size: inherit;
+				line-height: inherit;
+			}
+		}
+	}
+}

@@ -1,0 +1,45 @@
+/*----------------------------------------------
+	SVG Divider
+----------------------------------------------*/
+
+.site-content.svg-divider {
+	position: relative;
+	z-index: 2;
+	padding: 0;
+	
+	.circle-down {
+		fill: darken($soap-color,40%);
+		height: calc(18px + 4vw);
+		margin-top: -1px;		
+	}
+	
+	@media (min-width: 768px) {
+		.circle-down {
+			height: calc(18px + 1vw);
+		}
+	}
+	
+	&.white-brightblue {
+		background: $soap-color;
+		
+		.circle-down {
+			fill: #fff;		
+		}
+	}	
+	
+	&.white-darkblue {
+		background: darken($soap-color,40%);
+		
+		.circle-down {
+			fill: #fff;		
+		}
+	}		
+	
+	&.brightblue-darkblue {
+		background: darken($soap-color,40%);
+		
+		.circle-down {
+			fill: $soap-color;		
+		}
+	}	
+}
