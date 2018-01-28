@@ -224,3 +224,214 @@ function give_linked_images_class($content) {
 }
 
 add_filter('the_content','give_linked_images_class');
+
+
+/**
+ * Register Custom Post Types
+ */
+
+function register_custom_post_types() {
+
+	/* Post Type: Portfolios. */
+
+	$labels = array(
+		"name" => __( "Portfolios", "" ),
+		"singular_name" => __( "Portfolio", "" ),
+		"menu_name" => __( "Portfolio", "" ),
+		"all_items" => __( "Portfolios", "" ),
+		"add_new" => __( "Add New", "" ),
+		"add_new_item" => __( "Add New Portfolio", "" ),
+		"edit_item" => __( "Edit Portfolio", "" ),
+		"new_item" => __( "New Portfolio", "" ),
+		"view_item" => __( "View Portfolio", "" ),
+		"view_items" => __( "View Portfolios", "" ),
+		"search_items" => __( "Search Portfolios", "" ),
+		"not_found" => __( "No Portfolios found", "" ),
+		"not_found_in_trash" => __( "No Portfolios found in Trash", "" ),
+		"parent_item_colon" => __( "Parent Portfolio", "" ),
+		"featured_image" => __( "Featured image for Portfolio", "" ),
+		"set_featured_image" => __( "Set featured image for Portfolio", "" ),
+		"use_featured_image" => __( "Use as featured image for this Portfolio", "" ),
+		"archives" => __( "Portfolio Archives", "" ),
+		"insert_into_item" => __( "Insert into Portfolio", "" ),
+		"uploaded_to_this_item" => __( "Uploaded to this Portfolio", "" ),
+		"filter_items_list" => __( "Filter Portfolio List", "" ),
+		"items_list_navigation" => __( "Portfolios List Navigation", "" ),
+		"items_list" => __( "Portfolios List", "" ),
+		"attributes" => __( "Portfolios Attributes", "" ),
+		"parent_item_colon" => __( "Parent Portfolio", "" ),
+	);
+
+	$args = array(
+		"label" => __( "Portfolios", "" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => true,
+		"show_in_menu" => true,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "factory", "with_front" => true ),
+		"query_var" => true,
+		"supports" => array( "title", "editor", "thumbnail", "post-formats" ),
+	);
+
+	register_post_type( "factory", $args );
+}
+
+add_action( 'init', 'register_custom_post_types' );
+
+/**
+ * Register Custom Taxonomies
+ */
+
+function register_my_taxes() {
+
+	/* Taxonomy: Portfolio Categories.*/
+
+	$labels = array(
+		"name" => __( "Portfolio Categories", "" ),
+		"singular_name" => __( "Portfolio Category", "" ),
+	);
+
+	$args = array(
+		"label" => __( "Portfolio Categories", "" ),
+		"labels" => $labels,
+		"public" => true,
+		"hierarchical" => false,
+		"label" => "Portfolio Categories",
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => array( 'slug' => 'portfolio_category', 'with_front' => true, ),
+		"show_admin_column" => false,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"show_in_quick_edit" => false,
+	);
+	register_taxonomy( "portfolio_category", array( "factory" ), $args );
+}
+
+add_action( 'init', 'register_my_taxes' );
+
+
+/**
+ * Advanced Custom Fields
+ */
+
+
+define( 'ACF_LITE', true );
+include_once('advanced-custom-fields/acf.php');
+
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_background-color',
+		'title' => 'Background Color',
+		'fields' => array (
+			array (
+				'key' => 'field_56ed12bd2bd64',
+				'label' => 'Background Color',
+				'name' => 'background_color',
+				'type' => 'select',
+				'required' => 1,
+				'choices' => array (
+					'background-default' => 'Default',
+					'background-red' => 'Red',
+					'background-pink' => 'Pink',
+					'background-purple' => 'Purple',
+					'background-deep-purple' => 'Deep-Purple',
+					'background-indigo' => 'Indigo',
+					'background-cyan' => 'Cyan',
+					'background-teal' => 'Teal',
+					'background-green' => 'Green',
+					'background-orange' => 'Orange',
+					'background-deep-orange' => 'Deep-Orange',
+					'background-brown' => 'Brown',
+				),
+				'default_value' => '',
+				'allow_null' => 0,
+				'multiple' => 0,
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_format',
+					'operator' => '==',
+					'value' => 'link',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+			array (
+				array (
+					'param' => 'post_format',
+					'operator' => '==',
+					'value' => 'quote',
+					'order_no' => 0,
+					'group_no' => 1,
+				),
+			),
+			array (
+				array (
+					'param' => 'post_format',
+					'operator' => '==',
+					'value' => 'status',
+					'order_no' => 0,
+					'group_no' => 2,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'side',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+	register_field_group(array (
+		'id' => 'acf_font-awesome-icon',
+		'title' => 'Font-Awesome Icon',
+		'fields' => array (
+			array (
+				'key' => 'field_56ed1244cce42',
+				'label' => 'Font-Awesome Icon',
+				'name' => 'font-awesome_icon',
+				'type' => 'text',
+				'default_value' => 'fal fa-newspaper',
+				'placeholder' => 'fal fa-newspaper',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'none',
+				'maxlength' => '',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'side',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}
