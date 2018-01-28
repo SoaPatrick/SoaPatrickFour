@@ -1,0 +1,36 @@
+/*----------------------------------------------
+	Dark Theme
+----------------------------------------------*/
+
+.dark-theme {
+	
+	color: #eee;
+	background: #000;
+	
+	.site-header {
+		filter: invert(1);
+	}
+	
+	a,
+	.blog-post .blog-post-content .blog-post-stats a {
+		color: #eee;
+		border-color: #eee;
+	}
+	
+	.blog-post {
+		
+		&.single-blog-post .blog-post-content blockquote,
+		.blog-post-featured-image .feature-image-wrapper .feature-image.empty, {
+			background: #333;
+		}
+		
+		&.blog-post-bg-color .blog-post-featured-image .feature-image-wrapper .feature-image.empty {
+			background: transparent;
+		}
+	}
+	
+	.site-content.svg-divider.white-darkblue .circle-down,
+	.site-content.svg-divider.white-brightblue .circle-down {
+		fill: #000;
+	}
+}
