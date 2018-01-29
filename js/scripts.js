@@ -68,12 +68,15 @@ window.onload = function(){
 function marginFunction() {
 	var headerMargin = document.getElementsByClassName('blog-post-header');
 	var headerWidth = document.getElementsByClassName('test');
-	if (headerWidth[0] != null) {
+	var headerFeaturedImageWrapper = document.getElementsByClassName('single-inline-header');
+	var headerFeaturedImage = document.getElementsByClassName('blog-post-single-featured-image');
+
+	if (headerFeaturedImageWrapper[0] != null && headerWidth[0] != null) {
 		var headerWidthFull = (headerWidth[0].offsetWidth/2) + headerMargin[0].offsetWidth;
-		document.getElementsByClassName('single-inline-header')[0].style.marginLeft = "-"+headerMargin[0].offsetWidth+"px";
-		document.getElementsByClassName('blog-post-single-featured-image')[0].style.width = headerWidthFull+"px";
+		headerFeaturedImageWrapper[0].style.marginLeft = "-"+headerMargin[0].offsetWidth+"px";
+		headerFeaturedImage[0].style.width = headerWidthFull+"px";
 	}
-}	
+}
 
 // c = element to scroll to or top position in pixels
 // e = duration of the scroll in ms, time scrolling
