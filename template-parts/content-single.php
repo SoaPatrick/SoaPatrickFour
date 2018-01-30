@@ -110,7 +110,7 @@
 						</div>						
 						<div class="test">
 							
-							<?php the_content(); ?>				
+							<?php the_content('<strong>Continue Reading...</strong>'); ?>				
 						</div>
 					</div>
 				</div>
