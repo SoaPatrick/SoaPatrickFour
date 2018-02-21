@@ -83,3 +83,12 @@ body {
 .site-content {
 	padding: 0 0 3em;
 }
+
+/*----------------------------------------------
+	Media Player Fix
+----------------------------------------------*/
+
+.wp-video-shortcode video, 
+video.wp-video-shortcode {
+	height: auto;
+}
