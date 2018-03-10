@@ -4,7 +4,7 @@ $factory-item-gutter: 1em;
 	.flex-container {
 		display: flex;
 		flex-wrap: wrap;
-		margin: 0 -($factory-item-gutter/2);
+		margin: 3em (-($factory-item-gutter/2));
 		
 		article {
 	    	margin: $factory-item-gutter/2;
@@ -19,29 +19,17 @@ $factory-item-gutter: 1em;
 		
 		@media (min-width: 1200px) {
 			article {
-				flex: 0 1 calc(20% - #{$factory-item-gutter});		
+				flex: 0 1 calc(33.3333% - #{$factory-item-gutter});		
 			}
 		}
 		
 		@media (max-width: 1199px) {
 			article {
-				flex: 0 1 calc(25% - #{$factory-item-gutter});		
-			}
-		}	
-		
-		@media (max-width: 991px) {
-			article {
-				flex: 0 1 calc(33.3333% - #{$factory-item-gutter});		
+				flex: 0 1 calc(50% - #{$factory-item-gutter});		
 			}
 		}		
 		
 		@media (max-width: 767px) {
-			article {
-				flex: 0 1 calc(50% - #{$factory-item-gutter});		
-			}
-		}	
-		
-		@media (max-width: 480px) {
 			article {
 				flex: 0 1 calc(100% - #{$factory-item-gutter});		
 			}

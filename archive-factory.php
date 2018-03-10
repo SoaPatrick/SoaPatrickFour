@@ -11,11 +11,13 @@ get_header(); ?>
 		<?php
 		$args = array(
 			'post_type' => 'factory',
-			'posts_per_page' => 200,
+			'posts_per_page' => 12,
+			'paged' => $paged, 
 		);	
-			
-		$cat_posts = new WP_Query( $args );
-		if ( $cat_posts->have_posts() ) : ?>	
+
+		$wp_query   = new WP_Query( $args );	
+		
+		if ( have_posts() ) : ?>	
 		
 			<header class="page-header">
 				<h1 class="page-title"><i class="fal fa-industry-alt"></i> Factory</h1>
@@ -23,11 +25,14 @@ get_header(); ?>
 
 			<div class="flex-container">
 				<?php 
-				while ( $cat_posts->have_posts() ) : $cat_posts->the_post();	
+				while ( have_posts() ) : the_post();	
 					get_template_part( 'template-parts/content-factory', get_post_format() );
 				endwhile; ?>
 			</div>
-		<?php else :
+			
+			<?php the_posts_navigation();			
+				
+		else :
 			get_template_part( 'template-parts/content', 'none' );
 		endif; ?>
 		
