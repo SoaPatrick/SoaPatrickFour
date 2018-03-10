@@ -235,7 +235,7 @@ function register_custom_post_types() {
 	/* Post Type: Portfolios. */
 
 	$labels = array(
-		"name" => __( "Portfolios", "" ),
+		"name" => __( "Factory", "" ),
 		"singular_name" => __( "Portfolio", "" ),
 		"menu_name" => __( "Portfolio", "" ),
 		"all_items" => __( "Portfolios", "" ),
