@@ -18,7 +18,7 @@ get_header(); ?>
 		if ( $cat_posts->have_posts() ) : ?>	
 		
 			<header class="page-header">
-				<h1 class="page-title">Factory</h1>
+				<h1 class="page-title"><i class="fal fa-industry-alt"></i> Factory</h1>
 			</header>			
 
 			<div class="flex-container">

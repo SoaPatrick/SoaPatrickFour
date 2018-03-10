@@ -82,6 +82,28 @@ body {
 
 .site-content {
 	padding: 0 0 3em;
+	
+	.page-header h1 {
+	    font-size: calc(18px + 2vw);
+	    margin-bottom: 0.8em;
+	    
+	    a {
+		    color: $soap-color;
+		    border: 0;
+	    }
+	    
+	    .no-wrap {
+		    white-space: nowrap;
+	    }
+	}
+	
+	.tagcloud {
+		a {
+			font-size: inherit !important;
+			margin: 0 2px;
+			line-height: calc(2em + .2vw);
+		}
+	}
 }
 
 /*----------------------------------------------

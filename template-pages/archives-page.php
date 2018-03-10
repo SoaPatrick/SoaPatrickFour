@@ -8,7 +8,7 @@ get_header(); ?>
     <div class="site-content archive-list">
 	    <div class="container">
 			<header class="page-header">		
-				<h1 class="page-title">Storage</h1>
+				<h1 class="page-title"><i class="fal fa-archive"></i> Storage</h1>
 			</header>
 
 			<?php while ( have_posts() ) : the_post(); ?>

@@ -435,3 +435,15 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 }
+
+/**
+ * Remove archive title prefixes.
+ *
+ * @param  string  $title  The archive title from get_the_archive_title();
+ * @return string          The cleaned title.
+ */
+function grd_custom_archive_title( $title ) {
+	// Remove any HTML, words, digits, and spaces before the title.
+	return preg_replace( '#^[\w\d\s]+:\s*#', '', strip_tags( $title ) );
+}
+add_filter( 'get_the_archive_title', 'grd_custom_archive_title' );
