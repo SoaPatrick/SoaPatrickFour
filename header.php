@@ -30,7 +30,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body id="top" <?php body_class(); ?>>
+<body id="top" <?php body_class('green-theme'); ?>>
 	<h1 class="hidden"><?php bloginfo('name'); ?></h1>
 	<h2 class="hidden"><?php bloginfo('description'); ?></h2>
 	

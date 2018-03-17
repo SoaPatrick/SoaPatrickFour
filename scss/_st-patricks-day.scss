@@ -1,0 +1,95 @@
+/*----------------------------------------------
+	St Patricks Day Theme
+----------------------------------------------*/
+
+$green: #2E7D32;
+$dark-green: #1B5E20;
+$dark: #222;
+
+
+.green-theme {
+	
+	color: #eee;
+	background: $green;
+	
+	#search-collapse {
+		background: #01140b;
+	}
+	
+	.site-header {
+		background: url(img/header-bg-green.jpg) no-repeat center bottom;
+		background-size: cover;
+	}
+	
+	.dropdown-nav .nav-container {
+		background: $dark-green;
+	}
+	
+	.dropdown-nav .nav-open {	
+		background: transparentize($dark-green,.5);	
+	}
+	
+	@media (max-width: 767px) {
+		#toggle-search-collapse {
+			background: transparentize($dark-green,.5);
+		}
+	}	
+	
+	a,
+	.blog-post .blog-post-content .blog-post-stats a {
+		color: #eee;
+		border-color: #eee;
+	}
+	
+	.blog-post {
+		
+		&.single-blog-post .blog-post-content blockquote,
+		.blog-post-featured-image .feature-image-wrapper .feature-image.empty, {
+			background: $dark-green;
+		}
+		
+		&.blog-post-bg-color .blog-post-featured-image .feature-image-wrapper .feature-image.empty {
+			background: transparent;
+		}
+	}
+	
+	.blog-post .blog-post-content .blog-post-stats ul>li .svg-inline--fa {
+		color: #fff;
+	}
+	
+	.blog-post .blog-post-content .blog-post-excerpt .read-more-link,
+	.blog-post.single-blog-post .blog-post-content .test a {
+		color: #fff;
+		border-color: #fff;
+		
+		&:hover,
+		&:focus {
+			color: #fff;
+		}
+	}	
+	
+	.site-content.instagram-feed {
+		background: $dark-green;		
+	}
+	
+	.site-content.svg-divider.white-darkblue .circle-down,
+	.site-content.svg-divider.white-brightblue .circle-down {
+		fill: $green;
+	}
+	
+	.site-content.svg-divider.white-brightblue {
+		background: $dark-green;			
+	}
+	.site-content.svg-divider.white-darkblue,
+	.site-content.svg-divider.brightblue-darkblue {
+		background: $dark;		
+	}
+	
+	.site-content.svg-divider.brightblue-darkblue .circle-down {
+		fill: $dark-green;
+	}
+	
+	.site-footer {
+		background: $dark !important;
+	}
+}
