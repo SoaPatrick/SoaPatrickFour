@@ -78,7 +78,7 @@ add_action( 'after_setup_theme', 'soapatrickfour_setup' );
  * Enqueue scripts and styles.
  */
 function soapatrickfour_scripts() {
-	wp_enqueue_style( 'soapatrickfour-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'soapatrickfour-style', get_template_directory_uri() . '/css/app.css' );
 	wp_enqueue_script( 'soapatrickfour-scripts', get_template_directory_uri() . '/js/scripts.js', '','' , true );		
 	wp_enqueue_script( 'soapatrickfour-fa5', get_template_directory_uri() . '/js/fontawesome-all.min.js', '','' , true  );		
 	if ( !is_admin() ) wp_deregister_script('jquery');		
